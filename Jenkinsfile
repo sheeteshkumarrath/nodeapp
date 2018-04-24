@@ -22,21 +22,25 @@ pipeline{
         
         //nodetest = docker.build("sheeteshkumarrath/website-test-image")
     }
-//stage('Run App') {
-//    steps {
-   //     echo 'Running the app...'    
-   //         sh 'node app.js'
-     //       sh 'echo "App is Running"'
-   //     }
-  //  }        
+stage('Run App') {
+   steps {
+        echo 'Running the app...'    
+           sh 'node app.js'
+           sh 'echo "App is Running"'
+        }
+    }        
     stage('Test') {
         /* Ideally, we would run a test framework against our image.
          * For this example, we're using a Volkswagen-type approach ;-) */
-        steps { echo 'Test starting...'
+        steps { echo 'Switching to new Terminal. Test starting...'
            // sh 'cd test & mocha'
             //sh 'mocha ./test/test.js
+               sh 'x-terminal-emulator'
             sh './node_modules/.bin/_mocha ./test/test.js'
             sh 'echo "Test Passed"'
+               sh 'exit'
+               sh 'exit'
+               
         }
     }
   //  stage('Push image') {
