@@ -32,8 +32,8 @@ pipeline{
         steps { echo 'Test starting...'
            // sh 'cd test & mocha'
             //sh 'mocha ./test/test.js
-            sh 'script/test'
-            sh 'echo "Tests passed"'
+            sh 'cd test && mocha'
+            sh 'echo "Test Passed"'
         }
     }
   //  stage('Push image') {
