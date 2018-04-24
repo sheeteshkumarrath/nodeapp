@@ -35,7 +35,7 @@ pipeline{
         steps { echo 'Test starting...'
            // sh 'cd test & mocha'
             //sh 'mocha ./test/test.js
-            sh 'cd test && mocha'
+            sh './node_modules/.bin/_mocha ./test/test.js'
             sh 'echo "Test Passed"'
         }
     }
