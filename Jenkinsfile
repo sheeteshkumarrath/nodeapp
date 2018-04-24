@@ -19,13 +19,13 @@ pipeline{
         
         //nodetest = docker.build("sheeteshkumarrath/website-test-image")
     }
-stage('Run App') {
-    steps {
-        echo 'Running the app...'    
-            sh 'node app.js'
-            sh 'echo "App is Running"'
-        }
-    }        
+//stage('Run App') {
+//    steps {
+   //     echo 'Running the app...'    
+   //         sh 'node app.js'
+     //       sh 'echo "App is Running"'
+   //     }
+  //  }        
     stage('Test') {
         /* Ideally, we would run a test framework against our image.
          * For this example, we're using a Volkswagen-type approach ;-) */
