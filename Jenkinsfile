@@ -6,7 +6,7 @@ pipeline{
             args '-u root'
                 }
          }
-    def nodetest
+    
     stages{
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
@@ -36,13 +36,11 @@ stage('Run App') {
         /* Ideally, we would run a test framework against our image.
          * For this example, we're using a Volkswagen-type approach ;-) */
         steps { echo 'Test starting...'
-        notetest.inside {
            // sh 'cd test & mocha'
             //sh 'mocha ./test/test.js
             sh 'npm test'
             sh 'echo "Tests passed"'
         }
-    }
     }
   //  stage('Push image') {
         /* Finally, we'll push the image with two tags:
