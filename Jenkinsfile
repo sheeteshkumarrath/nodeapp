@@ -32,7 +32,7 @@ pipeline{
         steps { echo 'Test starting...'
            // sh 'cd test & mocha'
             //sh 'mocha ./test/test.js
-            sh 'npm test'
+            sh 'mocha test/test.js'
             sh 'echo "Tests passed"'
         }
     }
