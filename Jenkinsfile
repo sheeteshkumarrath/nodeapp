@@ -13,6 +13,10 @@ pipeline{
         steps {
                 echo 'Building...'
                 sh 'npm install'
+                sh 'npm i --save express'
+                sh 'npm i --save-dev supertest should mocha'
+                sh 'npm i -g intall mocha'
+            
             }
         /* This builds the actual image; synonymous to
          * docker build on the command line */
