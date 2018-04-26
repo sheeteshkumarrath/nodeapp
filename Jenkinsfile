@@ -47,15 +47,13 @@ stage('Run App') {
                
         }
     }
-      stage('Terminate App') {
-          
-
-        steps { 
-            echo 'Terminating the App'
-            sh 'killall node app.js'
-            echo 'App is terminated'
-            sh 'exit 127'
-        }}
+//      stage('Terminate App') {      
+//        steps { 
+//            echo 'Terminating the App'
+//            sh 'killall node app.js'
+//            echo 'App is terminated'
+//            sh 'exit 127'
+//        }}
         
   //  stage('Push image') {
         /* Finally, we'll push the image with two tags:
