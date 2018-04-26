@@ -39,16 +39,5 @@ stage('Run App') {
             //sh './node_modules/.bin/_mocha ./test/test.js'            
                }
                    }
-        //App Terminate is not required as all processes will stop when Docker Container stops running
-     stage('Deploy Licious Web') { 
-        steps { 
-            echo 'Deploy Demo of Licious Dev Website..'
-            sh 'chmod 700 Devnew.pem'
-            sh 'chmod +x ./script/deploy'
-        //Run the executable Deploy file            
-            sh './script/deploy'
-            echo 'Here, we are not actually deploying, just showing the branches under "Liciousweb" repo'          
-               }
-                   }   
-        
+        //App Terminate is not required as all processes will stop when Docker Container stops running      
     }}
