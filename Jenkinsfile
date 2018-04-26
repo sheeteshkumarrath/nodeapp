@@ -54,7 +54,7 @@ stage('Run App') {
             echo 'Terminating the App'
             sh 'killall node app.js'
             echo 'App is terminated'
-            sh 'exit'
+            sh 'exit 127'
         }}
         
   //  stage('Push image') {
