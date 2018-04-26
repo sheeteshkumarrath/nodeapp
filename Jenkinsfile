@@ -27,7 +27,7 @@ stage('Run App') {
    steps {
            echo 'Running the app...' 
            sh 'node app.js &'
-           sh 'echo "App is Running"'
+           echo 'App is Running'
         }
     }        
     stage('Test') {
@@ -53,7 +53,8 @@ stage('Run App') {
         steps { 
             echo 'Terminating the App'
             sh 'killall node app.js'
-            sh 'echo "App is terminated"'
+            echo 'App is terminated'
+            sh 'exit'
         }}
         
   //  stage('Push image') {
