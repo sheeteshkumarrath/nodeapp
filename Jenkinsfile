@@ -1,11 +1,11 @@
 #!/usr/bin/env groovy
 pipeline{
-    agent{
-        docker {
-            image 'node:carbon'
-            args '-u root'
-                }
-         }
+//    agent{
+//        docker {
+//            image 'node:carbon'
+//            args '-u root'
+//                }
+//         }
     
     stages{
     stage('Build') {
@@ -29,20 +29,20 @@ stage('Run App') {
            sh 'echo "App is Running"'
         }
     }        
-    stage('Test') {
+//    stage('Test') {
         /* Ideally, we would run a test framework against our image.
          * For this example, we're using a Volkswagen-type approach ;-) */
-        steps { echo 'Switching to new Terminal. Test starting...'
+//        steps { echo 'Switching to new Terminal. Test starting...'
            // sh 'cd test & mocha'
             //sh 'mocha ./test/test.js
-               sh 'x-terminal-emulator'
-            sh './node_modules/.bin/_mocha ./test/test.js'
+//               sh 'x-terminal-emulator'
+//            sh './node_modules/.bin/_mocha ./test/test.js'
 //            sh 'echo "Test Passed"'
  //              sh 'exit'
  //              sh 'exit'
                
-        }
-    }
+  //      }
+  //  }
   //  stage('Push image') {
         /* Finally, we'll push the image with two tags:
          * First, the incremental build number from Jenkins
