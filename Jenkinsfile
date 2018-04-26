@@ -2,69 +2,42 @@
 pipeline{
     agent{
         docker {
+            //Run the Docker image and create Docker Container to perform the Pipeline activities
             image 'node:carbon'
             args '-u root'
                 }
-         }
-    
+          }    
     stages{
-    stage('Build') {
-        
+    stage('Build') {      
         steps {
                 echo 'Building...'
+            //Install NPM
                 sh 'npm install'
+            //Install Express to run our Node JS APP i.e. 'app.js'
                 sh 'npm i --save express'
+            //Intall Dev-dependencies ('Supertest, Should & Mocha) to test the app
                 sh 'npm i --save-dev supertest should mocha'
-                sh 'chmod +x ./script/test'
-                 
-            }
-        /* This builds the actual image; synonymous to
-         * docker build on the command line */
-        
-        //nodetest = docker.build("sheeteshkumarrath/website-test-image")
-    }
+            //Make the test file executable under 'Script' folder
+                sh 'chmod +x ./script/test'                 
+              }
+                    }
 stage('Run App') {
-    
+    //Test can only be perfomed on the running application
    steps {
            echo 'Running the app...' 
+       // Run the app
            sh 'node app.js &'
            echo 'App is Running'
-        }
-    }        
-    stage('Test') {
-        /* Ideally, we would run a test framework against our image.
-         * For this example, we're using a Volkswagen-type approach ;-) */
-         
+          }
+                  }        
+    stage('Test') { 
         steps { 
             echo 'Testing the app...'
-            //echo 'Switching to new Terminal. Test starting...'
-           // sh 'cd test & mocha'
-            //sh 'mocha ./test/test.js
-//               sh 'x-terminal-emulator'
+        //Run the executable Test file
             sh './script/test'
-//            sh './node_modules/.bin/_mocha ./test/test.js'
-//            sh 'echo "Test Passed"'
- //              sh 'exit'
- //              sh 'exit'
-               
-        }
-    }
-//      stage('Terminate App') {      
-//        steps { 
-//            echo 'Terminating the App'
-//            sh 'killall node app.js'
-//            echo 'App is terminated'
-//            sh 'exit 127'
-//        }}
-        
-  //  stage('Push image') {
-        /* Finally, we'll push the image with two tags:
-         * First, the incremental build number from Jenkins
-         * Second, the 'latest' tag.
-         * Pushing multiple tags is cheap, as all the layers are reused. */
-    //    docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
-    //        webcd.push("${env.BUILD_NUMBER}")
-    //        webcd.push("latest")
-       // }
-   // }
+            //Can run directly with the following command
+            //sh './node_modules/.bin/_mocha ./test/test.js'            
+               }
+                   }
+        //App Terminate is not required as all processes will stop when Docker Container stops running
     }}
