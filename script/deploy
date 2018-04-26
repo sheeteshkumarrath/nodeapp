@@ -1,5 +1,5 @@
 #!/bin/sh
-ssh -i Devnew.pem ubuntu@52.77.22.148 <<EOF
+ssh -i Devnew.pem -tt ubuntu@52.77.22.148 <<EOF
   cd /var/www/html/liciousweb
   echo "$git branch"
   exit
