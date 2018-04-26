@@ -15,6 +15,7 @@ pipeline{
                 sh 'npm install'
                 sh 'npm i --save express'
                 sh 'npm i --save-dev supertest should mocha'
+                sh 'chmod +x ./script/test'
                  
             }
         /* This builds the actual image; synonymous to
