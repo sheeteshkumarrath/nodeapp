@@ -40,7 +40,8 @@ stage('Run App') {
            // sh 'cd test & mocha'
             //sh 'mocha ./test/test.js
 //               sh 'x-terminal-emulator'
-            sh './node_modules/.bin/_mocha ./test/test.js'
+            sh './script/test'
+//            sh './node_modules/.bin/_mocha ./test/test.js'
 //            sh 'echo "Test Passed"'
  //              sh 'exit'
  //              sh 'exit'
