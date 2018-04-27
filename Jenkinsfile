@@ -2,7 +2,7 @@
 pipeline{
     agent{
         docker {
-            //Run the Docker image and create Docker Container to perform the Pipeline activities
+            ////Run the Docker image and create Docker Container to perform the Pipeline activities
             image 'node:carbon'
             args '-u root'
                 }
