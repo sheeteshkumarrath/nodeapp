@@ -39,5 +39,5 @@ stage('Run App') {
             //sh './node_modules/.bin/_mocha ./test/test.js'            
                }
                    }
-        //App Terminate is not required as all processes will stop when Docker Container stops running
+        //App Terminate is not required as all processes will stop when Docker Container stops running      
     }}
