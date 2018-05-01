@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("sheeteshkumarrath/nodeapp/nodeimage")
+        app = docker.build("sheeteshkumarrath/nodeapp/nodeimage:${env.BUILD_NUMBER}")
     }
 
     stage('Test image') {
@@ -30,10 +30,10 @@ node {
          * Pushing multiple tags is cheap, as all the layers are reused. */
         docker.withRegistry ('https://github.com', 'github-credentials') {
 //docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-credentials') 
-//app
-//{
-            app.push("${env.BUILD_NUMBER}")
-            app.push("latest")
-        //}
+app
+{ app.puch()
+            //app.push("${env.BUILD_NUMBER}")
+            //app.push("latest")
+        }
     }}
 }
