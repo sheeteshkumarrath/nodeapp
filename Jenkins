@@ -7,7 +7,7 @@ node {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-        app = docker.build("sheeteshkumarrath/nodeapp/nodeimage")
+        app = docker.build("sheeteshkumarrath/nodeapp")
     }
     stage('Test image') {
         /* Ideally, we would run a test framework against our image.
@@ -26,8 +26,8 @@ node {
 //app
 //{ 
 //app.push("sheeteshkumarrath/nodeapp/nodeimage:${env.BUILD_NUMBER}")
-            app.push("${env.BUILD_NUMBER}")
-            app.push("latest")
+            app.push("nodetest:${env.BUILD_NUMBER}")
+            //app.push("latest")
         // }
     }
 }}
