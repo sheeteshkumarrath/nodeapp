@@ -1,4 +1,5 @@
 node {
+CookieHandler.setDefault(new CookieManager(null, CookiePolicy.ACCEPT_ALL));
     def app
 
     stage('Clone repository') {
