@@ -3,7 +3,7 @@ pipeline{
     agent{
         docker {
             ////Run the Docker image and create Docker Container to perform the Pipeline activities
-            image 'localhost:5000/sheeteshkumarrath/nodeimage:44'
+            image 'localhost:5000/sheeteshkumarrath/nodeimage:latest'
             args '-u root'
                 }
           }    
