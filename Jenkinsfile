@@ -3,7 +3,7 @@ pipeline{
     agent{
         docker {
             ////Run the Docker image and create Docker Container to perform the Pipeline activities
-            image 'node:carbon'
+            image 'localhost:5000/sheeteshkumarrath/nodeimage:${env.BUILD_NUMBER}'
             args '-u root'
                 }
           }    
