@@ -3,7 +3,7 @@ FROM node:carbon
 
 # set maintainer
 LABEL maintainer "sheeteshkumarrath@gmail.com"
-
+args '-u root'
 #RUN npm install
 #RUN npm i --save express
 #RUN npm i --save-dev supertest should mocha
