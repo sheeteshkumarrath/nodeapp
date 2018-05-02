@@ -10,9 +10,9 @@ LABEL maintainer "sheeteshkumarrath@gmail.com"
 #RUN chmod +x ./script/test
 #RUN node app.js &
 # set a health check
-#HEALTHCHECK --interval=30s \
-#            --timeout=30s \
-            CMD curl -f http://10.0.2.15:5000 || exit 1
+HEALTHCHECK --interval=10s \
+            --timeout=10s \
+            CMD curl -f http://localhost:5000 || exit 1
 
 # tell docker what port to expose
 EXPOSE 5000
