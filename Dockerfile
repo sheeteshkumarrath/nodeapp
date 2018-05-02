@@ -7,7 +7,7 @@ LABEL maintainer "sheeteshkumarrath@gmail.com"
 RUN npm install
 RUN npm i --save express
 RUN npm i --save-dev supertest should mocha
-RUN chmod +x ./script/test
+#RUN chmod +x ./script/test
 RUN node app.js &
 # set a health check
 HEALTHCHECK --interval=30s \
