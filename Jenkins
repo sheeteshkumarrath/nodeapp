@@ -21,8 +21,9 @@ node {
          * First, the incremental build number from Jenkins
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
-        docker.withRegistry ('https://github.com/sheeteshkumarrath/nodeapp', 'github-credentials') {
-//docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-credentials') 
+        //docker.withRegistry ('https://github.com/sheeteshkumarrath/nodeapp', 'github-credentials') {
+docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-credentials'){
+//docker.withRegistry ('https://licioustests@bitbucket.org', 'bitbucket-credentials')
 //app
 //{ 
 //app.push("sheeteshkumarrath/nodeapp/nodeimage:${env.BUILD_NUMBER}")
