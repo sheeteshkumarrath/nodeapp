@@ -1,5 +1,5 @@
 # use a node base image
-FROM node
+FROM node:carbon
 
 # set maintainer
 LABEL maintainer "sheeteshkumarrath@gmail.com"
