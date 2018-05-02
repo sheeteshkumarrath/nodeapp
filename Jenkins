@@ -8,7 +8,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
         //app = docker.build("sheeteshkumarrath/nodeapp/nodeimage")
-        app = docker.build("licioustests/dockers/src/master/nodeimage")
+        app = docker.build("sheeteshkumarrath/nodetest/nodeimage")
     }
     stage('Test image') {
         /* Ideally, we would run a test framework against our image.
@@ -23,8 +23,8 @@ node {
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
         //docker.withRegistry ('https://github.com/sheeteshkumarrath/nodeapp', 'github-credentials') {
-//docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-credentials'){
-docker.withRegistry ('https://bitbucket.org', 'bitbucket-credentials'){
+docker.withRegistry('https://hub.docker.com', 'dockerhub-credentials'){
+//docker.withRegistry ('https://bitbucket.org', 'bitbucket-credentials'){
 //app
 //{ 
 //app.push("sheeteshkumarrath/nodeapp/nodeimage:${env.BUILD_NUMBER}")
